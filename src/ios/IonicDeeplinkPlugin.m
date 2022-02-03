@@ -1,30 +1,11 @@
 #import "IonicDeeplinkPlugin.h"
 
 #import <Cordova/CDVAvailability.h>
-#import "DeeplinkService.h"
 
 @implementation IonicDeeplinkPlugin
 
 - (void)pluginInitialize {
   _handlers = [[NSMutableArray alloc] init];
-  
-  NSURL* lastURL = [DeeplinkService getLastURL];
-
-  if (lastURL != nil)
-  {
-    [self handleLink:lastURL];
-  }
-
-  [DeeplinkService clearLastURL];
-
-  NSUserActivity* lastUserActivity = [DeeplinkService getLastUserActivity];
-
-  if (lastUserActivity != nil)
-  {
-    [self handleContinueUserActivity:lastUserActivity];
-  }
-
-  [DeeplinkService clearLastUserActivity];
 }
 
 /* ------------------------------------------------------------- */
