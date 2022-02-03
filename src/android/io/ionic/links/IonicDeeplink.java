@@ -26,12 +26,7 @@ import java.util.TimeZone;
 import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
-import android.graphics.Rect;
-import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.inputmethod.InputMethodManager;
-import android.telephony.TelephonyManager;
 import android.net.Uri;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -99,6 +94,8 @@ public class IonicDeeplink extends CordovaPlugin {
       canOpenApp(uri, callbackContext);
     } else if(action.equals("getHardwareInfo")) {
       getHardwareInfo(args, callbackContext);
+    } else if(action.equals("cleanLink")) {
+      cleanLink();
     }
     return true;
   }
@@ -115,6 +112,10 @@ public class IonicDeeplink extends CordovaPlugin {
     for(CallbackContext callback : this._handlers) {
       sendToJs(lastEvent, callback);
     }
+    //lastEvent = null;
+  }
+
+  private void cleanLink() {
     lastEvent = null;
   }
 

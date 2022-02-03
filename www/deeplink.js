@@ -34,6 +34,10 @@ var IonicDeeplink = {
     exec(cb, null, PLUGIN_NAME, 'canOpenApp', []);
   },
 
+  cleanLink: function () {
+    exec(null, null, PLUGIN_NAME, 'cleanLink', []);
+  },
+
   route: function (paths, success, error) {
     var self = this;
     this.paths = paths;
