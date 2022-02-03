@@ -102,7 +102,12 @@
   }
 
   // Clear out the last event
-  _lastEvent = nil;
+  //_lastEvent = nil;
+}
+
+- (void)cleanLink:(CDVInvokedUrlCommand *)command {
+  // Clear out the last event
+    _lastEvent = nil;
 }
 
 - (CDVPluginResult *)createResult:(NSURL *)url {

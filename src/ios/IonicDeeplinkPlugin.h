@@ -10,6 +10,7 @@
 - (void)canOpenApp:(CDVInvokedUrlCommand *)command;
 - (void)onDeepLink:(CDVInvokedUrlCommand *)command;
 - (void)getHardwareInfo:(CDVInvokedUrlCommand *)command;
+- (void)cleanLink:(CDVInvokedUrlCommand *)command;
 
 // Internal deeplink and CUA handlers
 - (BOOL)handleLink:(NSURL *)url;
